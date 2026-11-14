@@ -1,1 +1,306 @@
-/* место для вашего кода */
+/* Проект «Оно тебе надо». Основной макет — 1100 px. */
+/* Ширина 1100px и центрирование задаются в global.css. */
+body {
+  color: #000;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr 148px 1fr;
+  align-items: center;
+  gap: 24px;
+  padding: 92px 50px;
+}
+
+.header__menu {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  white-space: nowrap;
+}
+
+.header__menu a {
+  color: #000;
+  font-size: 18px;
+  text-underline-offset: 3px;
+}
+
+.header__menu a:not(:first-child)::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin: 0 14px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+.header__menu a:first-child,
+.footer__menu a:first-child {
+  text-decoration: none;
+}
+
+.header__logo {
+  display: block;
+  width: 148px;
+}
+
+.header__logo-image {
+  display: block;
+  width: 148px;
+  height: auto;
+}
+
+.header__address {
+  justify-self: end;
+  max-width: 240px;
+}
+
+.header__address,
+.footer__address {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 24px;
+}
+
+.header__address a,
+.footer__address a {
+  color: #000;
+  text-underline-offset: 3px;
+}
+
+.header__address p,
+.footer__address p {
+  margin: 0;
+}
+
+.cover {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 757px;
+  box-sizing: border-box;
+  padding: 165px 50px 50px;
+  background: url("../images/cover.jpg") center / cover no-repeat;
+  color: #fff;
+}
+
+.cover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgb(0 0 0 / 60%);
+}
+
+.cover > * {
+  position: relative;
+  z-index: 1;
+}
+
+.cover__title {
+  margin: 0;
+  font-size: 100px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.aligned-text {
+  display: block;
+}
+
+.aligned-text_left { text-align: left; }
+.aligned-text_center { text-align: center; }
+.aligned-text_right { text-align: right; }
+
+.cover__description {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 30px;
+}
+
+.cover__description p {
+  margin: 0;
+  font-size: 20px;
+  line-height: 28px;
+  text-transform: uppercase;
+}
+
+.bet-button {
+  padding: 12px 32px;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  font: inherit;
+  font-size: 22px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.lots {
+  margin: 180px 24px 0;
+}
+
+.lots__heading {
+  margin: 0 0 27px 40px;
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+.lots__card-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lots__card-list-item {
+  min-width: 0;
+}
+
+.card-link {
+  display: block;
+  height: 100%;
+  color: #fff;
+  text-decoration: none;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 563px;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 48px 40px;
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgb(0 0 0 / 60%);
+}
+
+.card_type_film { background-image: url("../images/card-lot-01.jpg"); }
+.card_type_book { background-image: url("../images/card-lot-02.jpg"); }
+.card_type_picture { background-image: url("../images/card-lot-03.jpg"); }
+
+.card__title,
+.card__text {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+}
+
+.card__title {
+  font-size: 22px;
+  line-height: 1.2;
+  font-weight: 700;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
+.card__text {
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.lots__look-more-link {
+  display: block;
+  width: fit-content;
+  margin: 30px 0 0 40px; /* Слева, как на присланном снимке макета Figma */
+  color: #000;
+  font-size: 20px;
+  text-underline-offset: 3px;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 334px minmax(0, 1fr);
+  gap: 25px;
+  margin: 180px 24px 0;
+}
+
+.about__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 240px;
+  height: 240px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: #000;
+}
+
+.about__logo-image {
+  display: block;
+  width: 148px;
+  height: auto;
+}
+
+.about__title {
+  margin: 100px 0;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.about__text {
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.about__text p { margin: 0; }
+.about__text p + p { margin-top: 24px; }
+
+.footer {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: 24px;
+  margin: 180px 50px 80px;
+  font-size: 18px;
+}
+
+.footer__menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer__menu a {
+  color: #000;
+  line-height: 24px;
+  text-underline-offset: 3px;
+}
+
+.footer__social-list {
+  display: flex;
+  justify-content: flex-end;
+  gap: 48px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer__social-list img {
+  display: block;
+  width: 48px;
+  height: 48px;
+}
